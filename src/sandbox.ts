@@ -1,8 +1,34 @@
-// tsc --init 으로 tsconfig.json 파일 생성
-// rootDir과 outDir 설정
-// 터미널에 tsc만 입력해도 알아서 컴파일함
+// let greet = () => {
+//     console.log('hello, world');
+// };
 
-// rootDir 밖의 ts파일도 인식해 컴파일하기 때문에
-//tsconfig.json에
-// "include": ["src"]
-// 설정을 반드시 추가해야함
+// 함수를 다른 타입으로 재할당 불가능
+// greet = 'hello';
+
+let greet: Function;
+// greet = 'hello';
+greet = () => {
+    console.log('hello, again ');
+};
+
+// 변수명 뒤의 ? 은 optional한 인자를 표시
+// es6의 초기값 할당 기능도 여전히 사용 가능함
+const add = (a: number, b: number = 10, c?: number | string) => {
+    console.log(a + b);
+    console.log(c);
+    //return 값을 지정하지 않으면 void 타입으로 설정됨
+    // 명시적으로 void 지정도 가능 (반드시 return값이 없는 함수일때 사용)
+};
+
+add(5);
+
+// 인자의 괄호 뒤에 타입을 붙여 리턴 타입을 고정시킬 수 있지만 optional한 사항
+// 때때로 필요할 때 사용함
+const minus = (a: number, b: number): number => {
+    return a + b;
+};
+
+// 함수의 return 값으로 변수에 할당할 경우
+// 타입 체크를 return값의 타입으로 한다
+// let result = minus(10, 7);
+// result = '512';

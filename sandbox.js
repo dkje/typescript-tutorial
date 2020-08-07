@@ -1,23 +1,30 @@
-////////// lesson2
-// ts는 js 파일로 컴파일해 사용해야한다
-// terminal로 ts 컴파일하기
-// tsc 파일명.ts 파일명.js
-// js 파일명을 생략하면 같은 이름으로 컴파일함
-// tsc 파일명.ts -w
-// watch 옵션을 주면 수정시 자동으로 컴파일함
-////////// lesson3
-// ts는 변수 타입을 지정 가능하다
-// 타입 에러 발생 시 신텍스 에러로 체크 가능하다
-var character = 'mario';
-var age = 30;
-var isBlackBelt = false;
-// character = 50
-character = 'test';
-//age = 'yoshi';
-age = 50;
-// isBlackBelt = 'yes';
-isBlackBelt = true;
-var circ = function (diameter) {
-    return diameter * Math.PI;
+//arrays
+// 배열 생성시 초기값으로 고정 타입을 정한다.
+var names = ['name1', 'name2', 'name3'];
+names.push('toad');
+// names.push(3);
+// names[0] = 3;
+var numbers = [10, 20, 30, 40];
+numbers.push(50);
+// numbers.push('why');
+// numbers[1] = 'shaun';
+// 여러가지 타입을 넣어 초기화 했을 경우는 모든 타입이 들어갈 수 있다.
+var mixed = ['ken', 4, 'chun-li', 8, 9, true];
+mixed.push(true);
+// 객체의 속성 값도 초기값에 따른 고정 타입을 갖는다
+var ninja = {
+    name: 'mario',
+    belt: 'black',
+    age: 30
 };
-console.log(circ(6.4));
+ninja.age = 40;
+ninja.name = 'tyw';
+// ninja.age = 'tesd';
+// 새 속성 할당 가능
+// ninja.skills = ['fighting', 'sneaking'];
+// 객체를 재정의할때 기존의 속성값을 / 속성값만 모두 갖고있지 않으면 오류 발생
+ninja = {
+    name: 'yoshi',
+    belt: 'orange',
+    age: 40
+};
